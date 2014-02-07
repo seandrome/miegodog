@@ -12,8 +12,5 @@ db1:
   name: wp-db
    php_extensions:
    - xml
-   - simplexml
-   - hash
-   - iconv
    - curl
   
