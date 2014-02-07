@@ -4,6 +4,11 @@ web1:
   php_upload_max_filesize: "16M"
   php_max_execution_time: 120
   php_max_input_time: 240
+  
+  php_extensions:
+    - curl
+    
+    
   shared_writable_dirs:
     - wp-content/uploads
 	
