@@ -11,21 +11,9 @@ web1:
 db1:
   name: wp-db
    php_extensions:
-   - mysqli
-   - mysql
-   - gd
-   - eaccelerator
-   - apc
-   - Sun
-   - geoip
-   - http
-   - json
-   - mcrypt
-   - pdo_mysql
-   - phar
    - xml
    - simplexml
    - hash
    - iconv
    - curl
-   - soap
+  
