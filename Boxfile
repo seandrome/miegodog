@@ -10,7 +10,7 @@ web1:
     
     
   shared_writable_dirs:
-    - wp-content/uploads
+    - /uploads
 	
 	before_deploy:
     - "cp -rf content/* `pwd`/wp-content/uploads"
