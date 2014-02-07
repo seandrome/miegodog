@@ -1,6 +1,12 @@
 web1:
   name: wp-web
-  php_version: 5.3.23
+php_version: 5.3.8
+php_extensions:
+-curl
+php_error_reporting: 30719
+php_display_errors: "0"
+static_expire: 604800
+php_max_execution_time: 3600
   php_upload_max_filesize: "16M"
   php_max_execution_time: 120
   php_max_input_time: 240
@@ -11,6 +17,5 @@ web1:
     - "rm -R pagoda"
 db1:
   name: wp-db
-php_extensions:
-   - curl
+
   
