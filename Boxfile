@@ -10,7 +10,6 @@ web1:
     - "rm -R pagoda"
 db1:
   name: wp-db
-   php_extensions:
-   - xml
+php_extensions:
    - curl
   
