@@ -6,19 +6,15 @@ web1:
   php_max_input_time: 240
   shared_writable_dirs:
     - wp-content/uploads
+	
+	before_deploy:
+    - "cp -rf content/* `pwd`/wp-content/uploads"
+    - "if [ ! -e setup/.htaccess ]; then cp htaccess setup/.htaccess; echo .htaccess moved into place; fi"
+    - "if [ ! -e setup/salts.php ]; then echo '<?php' > setup/salts.php; curl -s https://api.wordpress.org/secret-key/1.1/salt/ >> setup/salts.php; echo Salts added; fi"
   after_build:
     - "mv pagoda/wp-config.php wp-config.php"
     - "rm -R pagoda"
 db1:
   name: wp-db
-php_version: 5.3.8
-  php_extensions:
-    - gd
-    - apc
-    - curl
-    - mbstring
 
-  php_error_reporting: 'E_ALL'
-  php_display_errors: On
-  php_date_timezone: US/Pacific
   
