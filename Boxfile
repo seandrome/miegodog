@@ -19,7 +19,6 @@ web1:
         - pdo_sqlite
         - session
         - simplexml
-        - yaml
         - zip
     php_error_reporting: 30719 # Same as E_ALL
     php_display_errors: "1"
