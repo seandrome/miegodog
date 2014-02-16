@@ -1,25 +1,12 @@
 web1:
   name: wp-web
-
-  php_upload_max_filesize: "16M"
-  php_max_execution_time: 120
-  php_max_input_time: 240
-  
-  php_extensions:
-    - curl
-    
-    
+  php_upload_max_filesize: "8M"
+  php_max_execution_time: 60
+  php_max_input_time: 120
   shared_writable_dirs:
-    - /uploads
-	
-	before_deploy:
-    - "cp -rf content/* `pwd`/wp-content/uploads"
-    - "if [ ! -e setup/.htaccess ]; then cp htaccess setup/.htaccess; echo .htaccess moved into place; fi"
-    - "if [ ! -e setup/salts.php ]; then echo '<?php' > setup/salts.php; curl -s https://api.wordpress.org/secret-key/1.1/salt/ >> setup/salts.php; echo Salts added; fi"
+    - wp-content/uploads
   after_build:
     - "mv pagoda/wp-config.php wp-config.php"
     - "rm -R pagoda"
 db1:
   name: wp-db
-
-  
